@@ -1,39 +1,36 @@
-
 using System;
+//update
 
 class Program
 {
     static void Main(string[] args)
-    {
-     
-        
-    Console.Write("What is the magic number? ");
-    string answer = Console.ReadLine();
-    int number = int.Parse(answer);
 
-    Console.Write("Whats is your guess? ");
-    string guessAnswer = Console.ReadLine();
-    int guessNumber = int.Parse(guessAnswer);
+    {
+        Console.Write("What is the magic number? ");
+        int magicNumber = int.Parse(Console.ReadLine());
+        
+        // default guess since value not showing yet
+        int guess = -1;
 
         
-    if (number > guessNumber)
-    {
-        Console.WriteLine("Higher");
-    }
+        while (guess != magicNumber)
+        {
+            Console.Write("What is your guess? ");
+            guess = int.Parse(Console.ReadLine());
 
-    else if (number < guessNumber)
-    {
-        Console.WriteLine("Lower");
+            if (magicNumber > guess)
+            {
+                Console.WriteLine("Higher");
+            }
+            else if (magicNumber < guess)
+            {
+                Console.WriteLine("Lower");
+            }
+            else
+            {
+                Console.WriteLine("You guessed it!");
+            }
+
+        }                    
     }
-    else if (number == guessNumber)
-    {
-        Console.WriteLine("You guessed it!");
-    }
-    else
-    {
-        Console.WriteLine("Invalid input. Please enter a number.");         
-    }  
-    }  
-}                
-// handling invalid input in C# is a common task, and there are several ways to do it. Here are some options:
-//https://www.reddit.com/r/csharp/comments/7m9el7/having_a_hard_time_understanding_how_to_deal_with/?rdt=41024
+}
